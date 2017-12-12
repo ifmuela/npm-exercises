@@ -2,7 +2,7 @@
 
 var http = require('http'),
 	options = {
-		host: 'assests/index.html',
+		host: 'bextlan.com',
 		port: 80,
 		path: '/'
 	},
