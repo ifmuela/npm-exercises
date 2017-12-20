@@ -1,0 +1,19 @@
+{
+  "name": "promises",
+  "version": "0.0.1",
+  "description": "Ejercicio de implementacion de promesas en NODEJS",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "callback",
+    "promises",
+    "q"
+  ],
+  "author": "ifmuela",
+  "license": "MIT",
+  "dependencies": {
+    "q": "^1.5.1"
+  }
+}
