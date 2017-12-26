@@ -1,0 +1,74 @@
+extends layout.jade
+
+block content
+  h1 Hola mundo desde JADE
+  h2 Estaciones del año
+  ul
+    li Primavera
+    li Verano
+    li Otoño
+    li invierno
+
+  article#jade.container
+    h1
+      a(href="#{link}", target="_blank")= title
+    p= description
+
+  article.container
+    h2 Estructuras básicas de Jade
+    p Este archivo HTML es generado con motor de Jade
+    p
+      |Para concatenar
+      |en varias líneas
+      |se usa pipe '|'
+
+    include logo
+
+    p.
+      Si te gusta la forma en que Jade genera codig html
+      puedes leer la documentación del
+      #[a(href="http://jade-lang.com/api", target="_black") API],
+      la referencia del
+      #[a(href="http://jade-lang.com/reference", target="_black") lenguaje]
+      y de la
+      <a href="http://jade-lang.com/command-line", target="_black">documentacion</a>
+    br
+    button#presioname.boton Presioname
+    script.
+      //alert('JavaScript ejecutado desde Jade')
+      document.querySelector('#presioname').onclick = () => {
+        alert('JavaScript ejecutado desde Jade presionando un boton')
+      }
+
+    -var nombre = 'Jade'
+    p Hola #{nombre}
+
+    -var fecha = new Date()
+    -var hora = fecha.getHours()
+
+    if (hora < 12)
+      p La hora #{hora} es Antes del meridiano (AM)
+    else
+      p La hora #{hora} es posterior del meridiano (PM)
+
+    -var estaciones = ['primavera', 'verano', 'otoño', 'invierno']
+
+    h2 Estaciones del año
+    ol
+      each estacion in estaciones
+        li #{estacion}
+
+  //- los mixins son funciones de Jade
+  mixin mesesEstaciones(estacion, meses)
+    div.item
+      h3 #{estacion}
+      ul
+        each mes in meses
+          li #{mes}
+
+  article.container
+    h2 Estaciones del año por meses
+    +mesesEstaciones(estaciones[0], ['Abril', 'Mayo', 'Junio'])
+    +mesesEstaciones(estaciones[1], ['Julio', 'Agosto', 'Septiembre'])
+    +mesesEstaciones(estaciones[2], ['Octubre', 'Noviembre', 'Diciembre'])
+    +mesesEstaciones(estaciones[3], ['Enero', 'Febrero', 'Marzo'])
