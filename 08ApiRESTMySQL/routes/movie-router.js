@@ -1,6 +1,6 @@
 'use strict'
 
-var movies = require('../models/movies'),
+var moviesContreller = require('../controller/movie-controller'),
     express = require('express'),
     router = express.Router()
 
@@ -17,7 +17,6 @@ function error404(req, res, next) {
 }
 
 router
-  .use(movies)
   .get('/', (req, res, next) => {
     req.getConnection((err, movies) => {
       movies.query('SELECT * FROM movie', (err, rows) => {
