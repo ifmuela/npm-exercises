@@ -9,7 +9,7 @@ var mysql = require('mysql'),
       password: config.mysql.pass,
       database: config.mysql.db
     },
-    myConn = mysql.createConnection({dbOptions})
+    myConn = mysql.createConnection(dbOptions)
 
 myConn.connect((err) => {
   return (err) ? console.log(`Error al conectarse a MySQL: ${err.stack}`) : console.log(`Conexión
