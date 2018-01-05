@@ -1,0 +1,17 @@
+Mongo es lazy, flojo puede crearse al momento de ser requerido
+mongod -> Ejecuuta el demonio (servidor) de MongoDB
+mongo -> Ejecuta el cliente de la terminal de comandos
+show dbs -> muestras las bases de datos en MongoDB
+use nombreDB -> muestra la base de datos con ese nombre en caso de no existir la crea
+show collections -> muestra las colecciones
+db.nombreCollection -> crea una coleccion a una base de datos (Colecciones son como las tablas)
+db.nombreCollection.insert({"campo":"valor"}) -> inserta un campo a la tabla en este caso un documento a la coleccion
+db.nombreCollection.count() -> numero de filas
+db.nombreCollection.find() -> busca
+db.nombreCollection.save({"_id":"valor", "campo":"valor"}) -> inserta o actualiza en dependencia si le pasas un id entonces actualiza sino inserta
+db.nombreCollection.remove({"_id":"valor"}) -> se le pasa el nombre o id o elemento unico y se elimina
+db.nombreCollection.findOne({"_id":"valor"}) -> se le pasa el nombre o por elemento que se va a buscar y encuentra un registro o en este caso documento
+db.nombreCollection.find().pretty() -> me devuelve organisado todo como es json me lo organisa como tal
+db.nombreCollection.find().explain -> nos da mas datos como configuraciones y toda la informacion de la base de datos y todas las configuraciones
+db.system.indexes.find() -> me devuelve si hemes agregado algun indice en nuestras tablas
+db.nombreCollection.ensureIndex({{"campo":1}}) -> se le pasa una key con valor 1 que es true y te crea una indexacion el tu tabla

@@ -1,0 +1,32 @@
+{
+  "name": "api-rest-mongo",
+  "version": "0.0.1",
+  "description": "Api REST MVC con MongoDB, Express y NodeJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "supervisor server.js"
+  },
+  "keywords": [
+    "api",
+    "CRUD",
+    "REST",
+    "MVC",
+    "MongoDB"
+  ],
+  "author": "ifmuela",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.2",
+    "express-method-override": "0.0.3",
+    "jade": "^1.11.0",
+    "mongoose": "^5.0.0-rc0",
+    "morgan": "^1.9.0",
+    "responsimple": "^1.0.1",
+    "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {}
+}
